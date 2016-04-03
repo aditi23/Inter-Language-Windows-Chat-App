@@ -46,6 +46,8 @@
             this.Rmsg = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -58,7 +60,7 @@
             this.groupBox1.Controls.Add(this.textLocalIP);
             this.groupBox1.Location = new System.Drawing.Point(3, 1);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(241, 120);
+            this.groupBox1.Size = new System.Drawing.Size(206, 120);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Sender";
@@ -66,7 +68,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(21, 79);
+            this.label2.Location = new System.Drawing.Point(6, 79);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(26, 13);
             this.label2.TabIndex = 3;
@@ -75,7 +77,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(18, 26);
+            this.label1.Location = new System.Drawing.Point(9, 26);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(17, 13);
             this.label1.TabIndex = 2;
@@ -83,16 +85,16 @@
             // 
             // textLocalPort
             // 
-            this.textLocalPort.Location = new System.Drawing.Point(102, 73);
+            this.textLocalPort.Location = new System.Drawing.Point(62, 76);
             this.textLocalPort.Name = "textLocalPort";
-            this.textLocalPort.Size = new System.Drawing.Size(100, 20);
+            this.textLocalPort.Size = new System.Drawing.Size(124, 20);
             this.textLocalPort.TabIndex = 1;
             // 
             // textLocalIP
             // 
-            this.textLocalIP.Location = new System.Drawing.Point(102, 20);
+            this.textLocalIP.Location = new System.Drawing.Point(62, 26);
             this.textLocalIP.Name = "textLocalIP";
-            this.textLocalIP.Size = new System.Drawing.Size(100, 20);
+            this.textLocalIP.Size = new System.Drawing.Size(124, 20);
             this.textLocalIP.TabIndex = 0;
             // 
             // groupBox2
@@ -101,9 +103,9 @@
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.textFriendPort);
             this.groupBox2.Controls.Add(this.textFriendIP);
-            this.groupBox2.Location = new System.Drawing.Point(250, 1);
+            this.groupBox2.Location = new System.Drawing.Point(229, 1);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(229, 120);
+            this.groupBox2.Size = new System.Drawing.Size(189, 120);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Receiver";
@@ -111,7 +113,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(48, 79);
+            this.label4.Location = new System.Drawing.Point(6, 76);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(26, 13);
             this.label4.TabIndex = 3;
@@ -120,7 +122,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(45, 25);
+            this.label3.Location = new System.Drawing.Point(15, 26);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(17, 13);
             this.label3.TabIndex = 2;
@@ -128,30 +130,31 @@
             // 
             // textFriendPort
             // 
-            this.textFriendPort.Location = new System.Drawing.Point(119, 73);
+            this.textFriendPort.Location = new System.Drawing.Point(56, 76);
             this.textFriendPort.Name = "textFriendPort";
-            this.textFriendPort.Size = new System.Drawing.Size(100, 20);
+            this.textFriendPort.Size = new System.Drawing.Size(127, 20);
             this.textFriendPort.TabIndex = 1;
             // 
             // textFriendIP
             // 
-            this.textFriendIP.Location = new System.Drawing.Point(119, 19);
+            this.textFriendIP.Location = new System.Drawing.Point(56, 26);
             this.textFriendIP.Name = "textFriendIP";
-            this.textFriendIP.Size = new System.Drawing.Size(100, 20);
+            this.textFriendIP.Size = new System.Drawing.Size(127, 20);
             this.textFriendIP.TabIndex = 0;
             // 
             // textMesage
             // 
-            this.textMesage.Location = new System.Drawing.Point(3, 323);
+            this.textMesage.Font = new System.Drawing.Font("Adobe Fan Heiti Std B", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textMesage.Location = new System.Drawing.Point(3, 307);
             this.textMesage.Name = "textMesage";
-            this.textMesage.Size = new System.Drawing.Size(585, 20);
+            this.textMesage.Size = new System.Drawing.Size(585, 39);
             this.textMesage.TabIndex = 2;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(649, 303);
+            this.button1.Location = new System.Drawing.Point(603, 307);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(75, 36);
             this.button1.TabIndex = 3;
             this.button1.Text = "Send";
             this.button1.UseVisualStyleBackColor = true;
@@ -159,7 +162,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(485, 12);
+            this.button2.Location = new System.Drawing.Point(437, 12);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 4;
@@ -169,10 +172,12 @@
             // 
             // listMessage
             // 
+            this.listMessage.Font = new System.Drawing.Font("Adobe Fan Heiti Std B", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listMessage.FormattingEnabled = true;
-            this.listMessage.Location = new System.Drawing.Point(3, 196);
+            this.listMessage.ItemHeight = 20;
+            this.listMessage.Location = new System.Drawing.Point(3, 157);
             this.listMessage.Name = "listMessage";
-            this.listMessage.Size = new System.Drawing.Size(585, 95);
+            this.listMessage.Size = new System.Drawing.Size(585, 144);
             this.listMessage.TabIndex = 5;
             // 
             // Msg
@@ -228,12 +233,32 @@
             this.comboBox1.TabIndex = 9;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(437, 67);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(56, 13);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Enter Text";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(428, 130);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(81, 13);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Translated Text";
+            // 
             // Form1
             // 
             this.AcceptButton = this.button1;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(736, 355);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.Rmsg);
@@ -275,6 +300,8 @@
         private System.Windows.Forms.TextBox Rmsg;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
     }
 }
 
