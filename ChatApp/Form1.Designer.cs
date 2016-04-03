@@ -48,8 +48,13 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -162,7 +167,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(437, 12);
+            this.button2.Location = new System.Drawing.Point(12, 127);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 4;
@@ -182,21 +187,21 @@
             // 
             // Msg
             // 
-            this.Msg.Location = new System.Drawing.Point(515, 61);
+            this.Msg.Location = new System.Drawing.Point(84, 14);
             this.Msg.Name = "Msg";
             this.Msg.Size = new System.Drawing.Size(209, 20);
             this.Msg.TabIndex = 6;
             // 
             // Rmsg
             // 
-            this.Rmsg.Location = new System.Drawing.Point(515, 123);
+            this.Rmsg.Location = new System.Drawing.Point(84, 77);
             this.Rmsg.Name = "Rmsg";
             this.Rmsg.Size = new System.Drawing.Size(209, 20);
             this.Rmsg.TabIndex = 7;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(513, 87);
+            this.button3.Location = new System.Drawing.Point(84, 45);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 8;
@@ -207,36 +212,15 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "ar",
-            "bs-Latn",
-            "bg",
-            "ca",
-            "zh-CHS",
-            "zh-CHT",
-            "hr",
-            "cs",
-            "da",
-            "nl",
-            "en",
-            "et",
-            "fi",
-            "fr",
-            "de",
-            "el",
-            "ht",
-            "he",
-            "hi"});
-            this.comboBox1.Location = new System.Drawing.Point(603, 87);
+            this.comboBox1.Location = new System.Drawing.Point(172, 44);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 9;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(437, 67);
+            this.label5.Location = new System.Drawing.Point(6, 21);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(56, 13);
             this.label5.TabIndex = 10;
@@ -245,11 +229,51 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(428, 130);
+            this.label6.Location = new System.Drawing.Point(-3, 80);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(81, 13);
             this.label6.TabIndex = 11;
             this.label6.Text = "Translated Text";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(0, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(0, 13);
+            this.label7.TabIndex = 12;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(600, 191);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(113, 13);
+            this.label8.TabIndex = 13;
+            this.label8.Text = "Select Your Language";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(594, 207);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(121, 21);
+            this.comboBox2.TabIndex = 14;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.label5);
+            this.groupBox3.Controls.Add(this.Msg);
+            this.groupBox3.Controls.Add(this.comboBox1);
+            this.groupBox3.Controls.Add(this.label6);
+            this.groupBox3.Controls.Add(this.button3);
+            this.groupBox3.Controls.Add(this.Rmsg);
+            this.groupBox3.Location = new System.Drawing.Point(424, 5);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(300, 116);
+            this.groupBox3.TabIndex = 15;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Check Transaltion";
             // 
             // Form1
             // 
@@ -257,12 +281,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(736, 355);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.Rmsg);
-            this.Controls.Add(this.Msg);
+            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.listMessage);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -275,6 +297,8 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -302,6 +326,10 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.GroupBox groupBox3;
     }
 }
 

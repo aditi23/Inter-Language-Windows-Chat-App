@@ -17,17 +17,83 @@ namespace ChatApp
     {
         Socket sck;
         EndPoint epLocal, epRemote;
-        
+
         public Form1()
         {
-            //comboBox1.SelectedIndex = 1;
+
             InitializeComponent();
+            ComboBox();
             sck = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
             sck.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.ReuseAddress, true);
             textLocalIP.Text = GetLocalIp();
             textFriendIP.Text = GetLocalIp();
         }
 
+       
+        public void ComboBox()
+        {
+            
+            comboBox1.DisplayMember = "Text";
+            comboBox1.ValueMember = "Value";
+
+            comboBox2.DisplayMember = "Text";
+            comboBox2.ValueMember = "Value";
+
+            var items = new[] {
+             new { Text = "Arabic", Value = "ar" },
+             new { Text = "Bosnian (Latin)", Value = "bs-Latn" },
+             new { Text = "Bulgarian", Value = "bg" },
+             new { Text = "Catalan", Value = "ca" },
+             new { Text = "Chinese Simplified", Value = "zh-CHS" },
+             new { Text = "Chinese Traditional", Value = "zh-CHT" },
+             new { Text = "Croatian", Value = "hr" },
+             new { Text = "Czech", Value = "cs" },
+             new { Text = "Danish", Value = "da" },
+             new { Text = "Dutch", Value = "nl" },
+             new { Text = "English", Value = "en" },
+             new { Text = "Estonian", Value = "et" },
+             new { Text = "Finnish", Value = "fi" },
+             new { Text = "French", Value = "fr" },
+             new { Text = "German", Value = "de" },
+             new { Text = "Greek", Value = "el" },
+             new { Text = "Haitian Creole", Value = "ht" },
+             new { Text = "Hebrew", Value = "he" },
+             new { Text = "Hindi", Value = "hi" },
+             new { Text = "Hmong Daw", Value = "mww" },
+             new { Text = "Hungarian", Value = "hu" },
+             new { Text = "Indonesian", Value = "id" },
+             new { Text = "Italian", Value = "it" },
+             new { Text = "Japanese", Value = "ja" },
+             new { Text = "Kiswahili", Value = "sw" },
+             new { Text = "Klingon", Value = "tlh" },
+             new { Text = "Klingon (pIqaD)", Value = "tlh-Qaak" },
+             new { Text = "Korean", Value = "ko" },
+             new { Text = "Latvian", Value = "lv" },
+             new { Text = "Lithuanian", Value = "lt" },
+             new { Text = "Malay", Value = "ms" },
+             new { Text = "Maltese", Value = "mt" },
+             new { Text = "Norwegian", Value = "no" },
+             new { Text = "Persian", Value = "fa" },
+             new { Text = "Polish", Value = "pl" },
+             new { Text = "Portuguese", Value = "pt" },
+             new { Text = "Romanian", Value = "ro" },
+             new { Text = "Russian", Value = "ru" },
+             new { Text = "Slovak", Value = "sk" },
+             new { Text = "Slovenian", Value = "sl" },
+             new { Text = "Spanish", Value = "es" },
+             new { Text = "Swedish", Value = "sv" },
+             new { Text = "Thai", Value = "th" },
+             new { Text = "Turkish", Value = "uk" },
+             new { Text = "Urdu", Value = "ur" },
+             new { Text = "Vietnamese", Value = "vi" },
+            };
+
+            comboBox1.DataSource = items;
+            comboBox1.SelectedIndex = 0;
+            comboBox2.DataSource = items;
+            comboBox2.SelectedIndex = 0;
+
+        }
         private string GetLocalIp()
         {
             IPHostEntry host;
@@ -57,15 +123,16 @@ namespace ChatApp
                     UnicodeEncoding encoding = new UnicodeEncoding();
                     string receivedMessage = encoding.GetString(receivedData);
 
-                    AdmAuthentication admAuth = new AdmAuthentication("Client Id", "Client secret");
+                   // AdmAuthentication admAuth = new AdmAuthentication("Client Id", "Client secret");
+                    AdmAuthentication admAuth = new AdmAuthentication("Windows_Chat_App", "bFKUtbOtSQ0fANOqalIAmebhC7ESonE7saRWw3BBwJM=");
                     try
                     {
                         admToken = admAuth.GetAccessToken();
                         // Create a header with the access_token property of the returned token
                         headerValue = "Bearer " + admToken.access_token;
                         string from = DetectMethod(headerValue, receivedMessage);
-                        string to = comboBox1.SelectedItem.ToString();
-                       message = TranslateMethod(headerValue, receivedMessage,from,to);
+                        string to = comboBox2.SelectedValue.ToString();
+                        message = TranslateMethod(headerValue, receivedMessage, from, to);
                     }
                     catch (WebException e)
                     {
@@ -111,7 +178,7 @@ namespace ChatApp
             Console.WriteLine("Http status code={0}, error message={1}", e.Status, strResponse);
         }
 
-        private static string TranslateMethod(string authToken, string text,string from,string to)
+        private static string TranslateMethod(string authToken, string text, string from, string to)
         {
             text = text.Replace("\0", "");
             string uri = "http://api.microsofttranslator.com/v2/Http.svc/Translate?text=" + WebUtility.UrlEncode(text) + "&from=" + from + "&to=" + to;
@@ -169,8 +236,8 @@ namespace ChatApp
 
         private void button3_Click(object sender, EventArgs e)
         {
-            
-            string to = comboBox1.SelectedItem.ToString();
+
+            string to = comboBox2.SelectedValue.ToString();
             AdmAccessToken admToken;
             string headerValue;
             string message = "";
@@ -184,8 +251,8 @@ namespace ChatApp
                     admToken = admAuth.GetAccessToken();
                     // Create a header with the access_token property of the returned token
                     headerValue = "Bearer " + admToken.access_token;
-                    string from = DetectMethod(headerValue,Msg.Text);
-                    message = TranslateMethod(headerValue, Msg.Text,from,to);
+                    string from = DetectMethod(headerValue, Msg.Text);
+                    message = TranslateMethod(headerValue, Msg.Text, from, to);
                     Rmsg.Text = message;
                 }
                 catch (WebException ev)
@@ -209,7 +276,7 @@ namespace ChatApp
 
         private static string DetectMethod(string authToken, string textToDetect)
         {
-            
+
             string uri = "http://api.microsofttranslator.com/v2/Http.svc/Detect?text=" + textToDetect;
             HttpWebRequest httpWebRequest = (HttpWebRequest)WebRequest.Create(uri);
             httpWebRequest.Headers.Add("Authorization", authToken);
@@ -236,11 +303,6 @@ namespace ChatApp
                     response = null;
                 }
             }
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void button1_Click(object sender, EventArgs e)
