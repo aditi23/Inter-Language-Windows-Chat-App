@@ -57,7 +57,7 @@ namespace ChatApp
                     UnicodeEncoding encoding = new UnicodeEncoding();
                     string receivedMessage = encoding.GetString(receivedData);
 
-                    AdmAuthentication admAuth = new AdmAuthentication("Windows_Chat_App", "bFKUtbOtSQ0fANOqalIAmebhC7ESonE7saRWw3BBwJM=");
+                    AdmAuthentication admAuth = new AdmAuthentication("Client Id", "Client secret");
                     try
                     {
                         admToken = admAuth.GetAccessToken();
